@@ -1,6 +1,7 @@
 package com.tinayang.weatherarashi;
 
 import android.app.Activity;
+
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
