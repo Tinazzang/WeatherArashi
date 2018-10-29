@@ -16,23 +16,31 @@ import java.util.List;
 
 public class MyApplication extends Application{
     private static final String TAG="MyAPP";
+    //创建getinstance方法
     private static MyApplication mApplication;
+    //在Application类中打开数据库
     private CityDB mCityDB;
+    //初始化城市信息列表
     private List<City>mCityList;
     @Override
     public void onCreate(){
         super.onCreate();
         Log.d(TAG,"MyApplication->Oncreate");
 
+        //创建getinstance方法
         mApplication=this;
+        //在Application类中打开数据库
         mCityDB=openCityDB();
+        //初始化城市信息列表
         initCityList();
     }
 
+    //创建geilnstance方法
     public static MyApplication getInstance(){
         return mApplication;
     }
 
+    //创建打开数据库的方法
     private CityDB openCityDB(){
         String path ="/data"
                 +Environment.getDataDirectory().getAbsolutePath()
@@ -73,6 +81,8 @@ public class MyApplication extends Application{
         }
         return new CityDB(this,path);
     }
+
+    //初始化城市信息列表
     private void initCityList(){
         mCityList=new ArrayList<City>();
         new Thread(new Runnable(){

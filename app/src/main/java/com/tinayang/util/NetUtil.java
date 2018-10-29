@@ -4,6 +4,7 @@ import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 
+//检查网络状态
 public class NetUtil {
     public static final int NETWORN_NONE=0;
     public static final int NETWORN_WIFI=1;
